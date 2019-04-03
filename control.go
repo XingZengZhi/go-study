@@ -12,7 +12,7 @@ func main() {
 		count += i
 	}
 
-	fmt.Println(count)
+	defer fmt.Println(count)
 
 	switch os := runtime.GOOS; os {
 	case "darwin":
