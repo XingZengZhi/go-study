@@ -1,4 +1,4 @@
-package main
+package get_start
 
 import "fmt"
 

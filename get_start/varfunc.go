@@ -1,4 +1,4 @@
-package main
+package get_start
 
 import "fmt"
 
@@ -17,7 +17,7 @@ func main() {
 	fmt.Println(add(4, 13))
 
 	a, b := swap("hello", "world")
-	fmt.Println(a,b)
+	fmt.Println(a, b)
 
 	fmt.Println("Go rules", Truth)
 
