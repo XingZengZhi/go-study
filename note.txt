@@ -1,0 +1,4 @@
+path包里包含一个字包filepath，提供了跨平台的函数，用于处理文件名和路径。
+列入Base()函数用于获得路径中最后一个元素（不包含后面的分隔符）：
+    import "path/filepath"
+    filename := filepath.Base(path)
