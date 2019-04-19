@@ -2,3 +2,6 @@ path包里包含一个字包filepath，提供了跨平台的函数，用于处�
 列入Base()函数用于获得路径中最后一个元素（不包含后面的分隔符）：
     import "path/filepath"
     filename := filepath.Base(path)
+
+在读文件时候，文件的权限是被忽略的，所以在使用OpenFile传入的第三个参数可以用0。
+而在写文件的时候，不管是Unix还是Windows，都需要使用0666
