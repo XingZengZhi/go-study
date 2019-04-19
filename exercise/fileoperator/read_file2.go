@@ -1,0 +1,37 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+/**
+按列读取文件中的数据，
+将数据读入变量v1,v2,v3内，
+再把变量的数据添加到切片的尾部
+
+*/
+func main() {
+	file, err := os.Open("products.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+
+	var col1, col2, col3 []string
+
+	for {
+		var v1, v2, v3 string
+		_, err := fmt.Fscanln(file, &v1, &v2, &v3)
+		if err != nil {
+			break
+		}
+		col1 = append(col1, v1)
+		col2 = append(col2, v2)
+		col3 = append(col3, v3)
+	}
+
+	fmt.Println(col1)
+	fmt.Println(col2)
+	fmt.Println(col3)
+}
