@@ -17,3 +17,9 @@ path包里包含一个字包filepath，提供了跨平台的函数，用于处�
 
 虽然反射能够让JSON字段去尝试匹配目标结构字段，但是只有真正匹配上的字段才会填充数据。字段没有匹配不会报错，而是
 直接忽略掉
+
+xml标签类型：StartElement，Chardata，EndElement, Comment, Directive, Proclnst
+结构解析器：NewParser方法持有一个io.Reader，并生成一个解析器类型的对象。还有一个Token()
+方法返回输入流里的下一个xml token。在输入流的结尾处，会返回(nil, io.EOF)
+xml文本被循环处理直到Token()返回一个错误，因为已经到达文件尾部，再没有内容可供处理了。通过一个type-switch可以
+根据一些XML标签进一步处理。Chardata中的内容只是一个[]byte, 通过字符串转换让其变得可读性强一些。
